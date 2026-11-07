@@ -1,0 +1,99 @@
+/* Тема: фитнес-тренер — чёрный, неоновый лайм, жёсткая типографика */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+:root{
+  --bg:#0b0b0c;--surface:#151517;--surface-2:#111113;--text:#f2f2f2;--muted:#9a9aa1;--border:#26262a;
+  --primary:#c8ff2e;--primary-contrast:#0b0b0c;--primary-soft:rgba(200,255,46,.12);
+  --font-head:'Oswald',Impact,sans-serif;--font-body:'Inter',system-ui,sans-serif;--head-weight:700;--head-spacing:.01em;
+  --radius:6px;--btn-radius:4px;--input-radius:4px;--shadow:0 0 0 1px var(--primary);--header-bg:rgba(11,11,12,.88);--input-bg:#101012
+}
+h1,h2,h3{text-transform:uppercase}
+.h2{font-size:clamp(38px,6vw,78px);line-height:.95}
+.h2 span{color:var(--primary)}
+.btn{text-transform:uppercase;letter-spacing:.06em;font-size:15px}
+.btn--primary:hover{box-shadow:0 0 30px -4px var(--primary)}
+.logo{font-size:28px;letter-spacing:.08em}
+.logo b{color:var(--primary)}
+.eyebrow::before{content:"// "}
+
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:130px 0 80px;overflow:hidden}
+.hero__bg{position:absolute;inset:0;z-index:-1}
+.hero__bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15) brightness(.5)}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 10%,rgba(11,11,12,.4) 70%,rgba(11,11,12,.7)),linear-gradient(0deg,var(--bg),transparent 40%)}
+.hero h1{font-size:clamp(56px,11vw,160px);line-height:.88}
+.hero h1 .out{color:transparent;-webkit-text-stroke:2px var(--primary)}
+.hero p{font-size:19px;color:#c9c9cf;max-width:520px;margin:26px 0 34px}
+.hero__stats{display:flex;gap:44px;margin-top:56px;flex-wrap:wrap}
+.hero__stats b{font-family:var(--font-head);font-size:52px;color:var(--primary);line-height:1;display:block}
+.hero__stats>div>span{color:var(--muted);font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+.scroll-hint{position:absolute;right:32px;bottom:32px;writing-mode:vertical-rl;font-size:12px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
+
+.ticker{background:var(--primary);color:var(--primary-contrast);padding:16px 0;overflow:hidden;white-space:nowrap;transform:rotate(-1.5deg);margin:-10px -20px 0}
+.ticker div{display:inline-flex;gap:36px;animation:tk 22s linear infinite;font-family:var(--font-head);font-size:28px;text-transform:uppercase}
+.ticker span::after{content:"✕";margin-left:36px}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.about__img{position:relative}
+.about__img img{border-radius:var(--radius);filter:grayscale(.3)}
+.about__img::before{content:"";position:absolute;inset:20px -20px -20px 20px;border:2px solid var(--primary);z-index:-1}
+.achv{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--border)}
+.achv li{display:grid;grid-template-columns:80px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
+.achv b{font-family:var(--font-head);color:var(--primary);font-size:22px}
+@media(max-width:900px){.about{grid-template-columns:1fr}}
+
+.prog{background:var(--surface);border:1px solid var(--border);padding:34px;position:relative;transition:.3s;display:flex;flex-direction:column}
+.prog:hover{border-color:var(--primary);transform:translateY(-6px)}
+.prog .n{font-family:var(--font-head);font-size:72px;line-height:1;color:transparent;-webkit-text-stroke:1px #3a3a40;position:absolute;right:24px;top:18px}
+.prog h3{font-size:30px;margin-bottom:12px}
+.prog p{color:var(--muted);margin-bottom:18px}
+.prog ul{display:grid;gap:8px;margin-bottom:24px;flex:1}
+.prog li::before{content:"→ ";color:var(--primary);font-weight:700}
+
+/* Калькулятор КБЖУ */
+.kbju{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border)}
+.kbju__f{padding:clamp(24px,4vw,44px);display:grid;gap:18px;background:var(--surface)}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pills label{flex:1}
+.pills input{display:none}
+.pills span{display:block;text-align:center;padding:12px 8px;border:1px solid var(--border);cursor:pointer;font-weight:600;font-size:14px;text-transform:uppercase;transition:.2s;white-space:nowrap}
+.pills input:checked+span{background:var(--primary);color:var(--primary-contrast);border-color:var(--primary)}
+.kbju__r{padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at 80% 20%,rgba(200,255,46,.12),transparent 60%)}
+.kcal{font-family:var(--font-head);font-size:clamp(64px,9vw,110px);color:var(--primary);line-height:1}
+.macros{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+.macros div{border:1px solid var(--border);padding:14px}
+.macros b{font-family:var(--font-head);font-size:30px;display:block}
+.macros span{font-size:13px;color:var(--muted);text-transform:uppercase}
+.bmi-bar{height:10px;background:linear-gradient(90deg,#38bdf8 0 18.5%,#22c55e 18.5% 50%,#facc15 50% 70%,#ef4444 70%);border-radius:5px;position:relative;margin:10px 0 6px}
+.bmi-bar i{position:absolute;top:-6px;width:4px;height:22px;background:#fff;border-radius:2px;transition:left .5s;box-shadow:0 0 10px #fff}
+@media(max-width:900px){.kbju{grid-template-columns:1fr}}
+
+/* Трансформации */
+.tr{position:relative;overflow:hidden;border-radius:var(--radius)}
+.tr img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1);transition:filter .5s,transform .6s}
+.tr:hover img{filter:grayscale(0);transform:scale(1.05)}
+.tr__info{position:absolute;inset:auto 0 0 0;padding:22px;background:linear-gradient(0deg,rgba(0,0,0,.92),transparent)}
+.tr__info b{font-family:var(--font-head);font-size:40px;color:var(--primary);line-height:1}
+.tr__info span{display:block;color:#ddd;font-size:14px}
+
+/* Цены */
+.switch{display:inline-flex;border:1px solid var(--border);padding:4px;margin-bottom:34px}
+.switch button{padding:12px 24px;font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:.06em;color:var(--muted)}
+.switch button.on{background:var(--primary);color:var(--primary-contrast)}
+.plan{border:1px solid var(--border);padding:34px;background:var(--surface);display:flex;flex-direction:column;position:relative}
+.plan.hot{border-color:var(--primary);box-shadow:0 0 50px -20px var(--primary)}
+.plan.hot::before{content:"Хит";position:absolute;top:-13px;left:34px;background:var(--primary);color:var(--primary-contrast);padding:3px 12px;font-weight:700;font-size:13px;text-transform:uppercase}
+.plan h3{font-size:24px}
+.plan .price{font-family:var(--font-head);font-size:56px;margin:14px 0 4px;line-height:1}
+.plan .price small{font-size:18px;color:var(--muted)}
+.plan .per{color:var(--muted);font-size:14px;margin-bottom:20px}
+.plan ul{display:grid;gap:10px;margin-bottom:28px;flex:1}
+.plan li::before{content:"✓ ";color:var(--primary);font-weight:800}
+
+.final{position:relative;overflow:hidden;border:1px solid var(--border)}
+.final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.3)}
+.final__in{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:clamp(28px,5vw,64px);align-items:center}
+.final form{background:rgba(11,11,12,.85);backdrop-filter:blur(8px);border:1px solid var(--border);padding:30px}
+@media(max-width:860px){.final__in{grid-template-columns:1fr}}
+.acc-btn{text-transform:uppercase;font-family:var(--font-head);font-weight:500;letter-spacing:.02em}
+.footer{border-top:1px solid var(--border)}

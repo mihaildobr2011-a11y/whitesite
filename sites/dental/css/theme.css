@@ -1,0 +1,110 @@
+/* Тема: стоматология — чистый медицинский, белый + бирюзово-синий */
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap');
+:root{
+  --bg:#ffffff;--surface:#ffffff;--surface-2:#f2f7fb;--text:#0b2540;--muted:#5a6f84;--border:#e1eaf2;
+  --primary:#0b78d1;--primary-contrast:#fff;--primary-soft:rgba(11,120,209,.09);--teal:#14b8a6;
+  --font-head:'Onest',system-ui,sans-serif;--font-body:'Onest',system-ui,sans-serif;--head-weight:700;--head-spacing:-.025em;
+  --radius:22px;--btn-radius:14px;--shadow:0 24px 50px -26px rgba(11,60,110,.3);--header-bg:rgba(255,255,255,.92)
+}
+.h2{font-size:clamp(30px,4vw,48px)}
+.h2 span{color:var(--primary)}
+.logo{font-size:22px;font-weight:800}
+.logo i{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--teal));display:grid;place-items:center}
+.logo i svg{width:22px;height:22px;color:#fff}
+.topbar{background:var(--text);color:#cfe0ef;font-size:13px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topbar button{color:#fff;font-weight:600;display:inline-flex;gap:6px;align-items:center}
+.header{top:34px}.header.scrolled{top:0}
+@media(max-width:700px){.topbar .hide-m{display:none}}
+
+.hero{padding:170px 0 60px;background:radial-gradient(1000px 500px at 85% 20%,rgba(20,184,166,.10),transparent 60%),radial-gradient(900px 600px at 0% 0%,rgba(11,120,209,.08),transparent 60%)}
+.hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(36px,5.2vw,66px);line-height:1.04}
+.hero h1 span{background:linear-gradient(90deg,var(--primary),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--muted);margin:22px 0 30px;max-width:520px}
+.checks{display:grid;gap:10px;margin-bottom:32px}
+.checks li{display:flex;gap:10px;align-items:center;font-weight:500}
+.checks li::before{content:"✓";width:24px;height:24px;border-radius:50%;background:rgba(20,184,166,.15);color:var(--teal);display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}
+.hero__img{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:1.1;box-shadow:var(--shadow)}
+.hero__img img{width:100%;height:100%;object-fit:cover}
+.promo{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-radius:20px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.promo b{font-size:17px}
+.promo small{display:block;color:var(--muted)}
+.timer{display:flex;gap:6px}
+.timer div{background:var(--text);color:#fff;border-radius:10px;padding:6px 8px;text-align:center;min-width:48px;font-weight:700;font-size:18px;line-height:1.1}
+.timer small{display:block;font-size:10px;font-weight:500;color:#9fb6cc!important}
+@media(max-width:900px){.hero__grid{grid-template-columns:1fr}.hero{padding-top:150px}}
+
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.trust>div{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;gap:14px;align-items:center}
+.trust>div b{font-size:28px;color:var(--primary);display:block;line-height:1}
+.trust>div>div>span{color:var(--muted);font-size:14px}
+@media(max-width:900px){.trust{grid-template-columns:1fr 1fr}}
+
+.svc{display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
+.svc h3{font-size:21px}
+.svc p{color:var(--muted);font-size:15px;flex:1}
+.svc .from{font-weight:700;color:var(--primary);font-size:18px}
+.svc .arrow{position:absolute;right:22px;top:22px;width:40px;height:40px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;transition:.3s}
+.svc:hover .arrow{background:var(--primary);color:#fff;transform:rotate(-45deg)}
+
+/* Калькулятор лечения */
+.calc{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:start}
+.calc-list{display:grid;gap:10px}
+.ci{display:grid;grid-template-columns:auto 1fr auto auto;gap:14px;align-items:center;padding:16px 18px;background:var(--surface);border:1.5px solid var(--border);border-radius:16px;transition:.2s;cursor:pointer}
+.ci.on{border-color:var(--primary);background:var(--primary-soft)}
+.ci input[type=checkbox]{width:20px;height:20px;accent-color:var(--primary)}
+.ci small{display:block;color:var(--muted);font-size:13px}
+.ci .pr{font-weight:700;white-space:nowrap}
+.stepper{display:flex;align-items:center;border:1px solid var(--border);border-radius:10px;background:#fff;visibility:hidden}
+.ci.on .stepper{visibility:visible}
+.stepper button{width:30px;height:30px;font-size:18px;color:var(--primary)}
+.stepper span{min-width:22px;text-align:center;font-weight:700}
+.calc-total{position:sticky;top:100px;background:var(--text);color:#fff;border-radius:24px;padding:28px}
+.calc-total .sum{font-size:44px;font-weight:800;margin:6px 0 4px;letter-spacing:-.02em}
+.calc-total .mo{background:rgba(20,184,166,.18);color:#5eead4;border-radius:12px;padding:12px 14px;margin:16px 0 20px;font-size:15px}
+.calc-total .muted{color:#9fb6cc}
+@media(max-width:900px){.calc{grid-template-columns:1fr}.ci{grid-template-columns:auto 1fr auto}.ci .stepper{grid-column:2}}
+
+/* Врачи */
+.filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filter button{padding:10px 18px;border-radius:99px;background:var(--surface-2);font-weight:500;font-size:15px;transition:.2s}
+.filter button.active{background:var(--primary);color:#fff}
+.doc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:.3s}
+.doc:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.doc.hide{display:none}
+.doc__img{aspect-ratio:6/5;overflow:hidden;background:var(--surface-2)}
+.doc__img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.doc__b{padding:22px}
+.doc__b h3{font-size:20px}
+.doc__b .role{color:var(--primary);font-weight:600;font-size:14px;margin:4px 0 10px}
+.doc__b p{color:var(--muted);font-size:14px;margin-bottom:16px}
+.doc__b .btn{padding:12px 18px;font-size:15px}
+
+/* Лицензии */
+.lic{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.lic-card{aspect-ratio:3/4;border-radius:14px;border:1px solid var(--border);background:repeating-linear-gradient(0deg,#fff,#fff 18px,#f3f7fa 18px,#f3f7fa 19px);padding:20px;display:flex;flex-direction:column;justify-content:space-between;font-size:13px;color:var(--muted);transition:.3s;cursor:zoom-in;position:relative}
+.lic-card::before{content:"";position:absolute;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;border:3px double var(--primary);opacity:.35}
+.lic-card b{color:var(--text);font-size:15px}
+.lic-card:hover{box-shadow:var(--shadow);transform:translateY(-4px) rotate(-1deg)}
+@media(max-width:800px){.lic{grid-template-columns:1fr 1fr}}
+
+.appoint{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,var(--primary),#0a5fa8)}
+.appoint__l{padding:clamp(28px,5vw,56px);color:#fff}
+.appoint__l .h2{color:#fff}
+.appoint__l p{color:#cfe4f7;margin-top:14px}
+.appoint__l ul{margin-top:24px;display:grid;gap:10px}
+.appoint__l li::before{content:"✓  ";color:#5eead4;font-weight:800}
+.appoint form{background:#fff;margin:14px;border-radius:22px;padding:clamp(22px,4vw,36px)}
+@media(max-width:860px){.appoint{grid-template-columns:1fr}}
+
+/* Версия для слабовидящих */
+body.a11y{--bg:#fff;--surface:#fff;--surface-2:#fff;--text:#000;--muted:#000;--border:#000;--primary:#000;--teal:#000;font-size:22px!important}
+body.a11y *{background-image:none!important;box-shadow:none!important;text-shadow:none!important}
+body.a11y img{filter:grayscale(1) contrast(1.1)}
+body.a11y .hero h1 span{color:#000;-webkit-text-fill-color:#000}
+body.a11y p,body.a11y li,body.a11y span,body.a11y small,body.a11y label,body.a11y a{font-size:max(1em,20px)!important}
+body.a11y .card,body.a11y .doc,body.a11y .ci,body.a11y .trust>div{border:2px solid #000}
+body.a11y .calc-total,body.a11y .appoint,body.a11y .topbar,body.a11y .footer{background:#000!important;color:#fff}
+.footer{background:var(--surface-2)}
+.icon-box{font-size:24px}

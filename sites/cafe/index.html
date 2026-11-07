@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Зерно — кофейня и кухня на Рубинштейна | Санкт-Петербург</title>
+<meta name="description" content="Specialty-кофе, завтраки весь день и авторская кухня. Закажите с собой онлайн или забронируйте столик.">
+<meta property="og:title" content="Зерно — кофейня и кухня">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/theme.css">
+<script src="config.js"></script>
+<script src="menu.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="container header__in">
+    <a href="#" class="logo"><i>З</i>Зерно</a>
+    <nav class="nav"><a href="#menu">Меню</a><a href="#atmosphere">Атмосфера</a><a href="#loyalty">Бонусы</a><a href="#booking">Бронь</a><a href="#contacts">Контакты</a></nav>
+    <div class="header__cta"><a data-cfg="phone" class="header__phone"></a><a href="#booking" class="btn btn--primary">Забронировать</a><button class="burger" aria-label="Меню"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero__bg"><img src="img/hero.jpg" alt="Интерьер кофейни Зерно" id="heroImg"></div>
+  <div class="container">
+    <span class="eyebrow" data-reveal>Specialty coffee · Санкт-Петербург</span>
+    <h1 data-reveal data-delay="100">Кофе, ради которого <em>просыпаются</em></h1>
+    <div class="hero__row">
+      <div>
+        <p data-reveal data-delay="200">Обжариваем зерно сами, печём круассаны каждое утро и готовим завтраки весь день. Заберите заказ без очереди — оформите онлайн.</p>
+        <div class="hero__btns" data-reveal data-delay="300"><a href="#menu" class="btn btn--primary">Заказать с собой</a><a href="#booking" class="btn btn--ghost">Забронировать столик</a></div>
+      </div>
+      <div class="hero__info" data-reveal="right" data-delay="300">
+        <span class="open-status" data-open-status></span>
+        <span data-cfg="address"></span>
+        <span class="muted" data-cfg="hoursText"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="menu">
+  <div class="container">
+    <div class="section-head" data-reveal><span class="eyebrow">Меню</span><h2 class="h2">Выбирайте — <em>приготовим</em> за 10 минут</h2><p class="lead">Добавьте позиции в заказ и заберите без очереди или оформите доставку.</p></div>
+    <div class="menu-nav" id="menuNav"></div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<section class="section section--alt" id="atmosphere">
+  <div class="container">
+    <div class="section-head" data-reveal><span class="eyebrow">Атмосфера</span><h2 class="h2">Место, куда хочется <em>вернуться</em></h2></div>
+    <div class="atm">
+      <img class="a1" src="img/latte.jpg" alt="Латте-арт" data-lightbox="atm" loading="lazy" data-reveal>
+      <img class="a2" src="img/hall.jpg" alt="Зал" data-lightbox="atm" loading="lazy" data-reveal>
+      <img class="a3" src="img/sign.jpg" alt="Вывеска" data-lightbox="atm" loading="lazy" data-reveal>
+      <img class="a4" src="img/toast.jpg" alt="Французский тост" data-lightbox="atm" loading="lazy" data-reveal>
+      <img class="a5" src="img/bowl.jpg" alt="Боул" data-lightbox="atm" loading="lazy" data-reveal>
+    </div>
+    <div class="grid g4" style="margin-top:56px">
+      <div data-reveal><h3 style="font-size:40px;color:var(--primary)"><span data-count="3">0</span> года</h3><p class="muted">обжариваем своё зерно</p></div>
+      <div data-reveal data-delay="100"><h3 style="font-size:40px;color:var(--primary)"><span data-count="64">0</span> места</h3><p class="muted">в зале и на веранде</p></div>
+      <div data-reveal data-delay="200"><h3 style="font-size:40px;color:var(--primary)"><span data-count="350">0</span>+</h3><p class="muted">чашек кофе каждый день</p></div>
+      <div data-reveal data-delay="300"><h3 style="font-size:40px;color:var(--primary)">★ <span data-count="4.9">0</span></h3><p class="muted">на Яндекс Картах и 2ГИС</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="loyalty">
+  <div class="container loyal">
+    <div data-reveal="left"><span class="eyebrow">Бонусная карта</span><h2 class="h2">Каждый шестой кофе — <em>в подарок</em></h2><p class="lead">Покажите номер телефона на кассе — штампы копятся автоматически. Нажмите на карту, чтобы посмотреть, как это работает.</p></div>
+    <div class="stamp-card" data-reveal="right" id="stampCard" style="cursor:pointer">
+      <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-family:var(--font-head);font-size:26px">Зерно Club</b><span class="muted" style="font-size:14px" id="stampTxt">0 из 5</span></div>
+      <div class="stamps"><div class="stamp"></div><div class="stamp"></div><div class="stamp"></div><div class="stamp"></div><div class="stamp"></div><div class="stamp gift">🎁</div></div>
+      <p class="muted" style="font-size:14px">Нажмите, чтобы поставить штамп ☕</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="booking">
+  <div class="container">
+    <div class="book" data-reveal>
+      <div class="book__img"><img src="img/dinner.jpg" alt="Ужин в Зерне" loading="lazy"></div>
+      <form class="form" data-lead="Бронь столика" data-success="Мы перезвоним в течение 10 минут и подтвердим бронь.">
+        <span class="eyebrow">Бронь столика</span><h2 style="font-size:36px;margin-bottom:8px">Забронируйте столик</h2>
+        <div class="row2"><div class="field"><label>Дата</label><input class="input" type="date" name="date" data-label="Дата" required id="bDate"></div><div class="field"><label>Время</label><input class="input" type="time" name="time" data-label="Время" value="19:00" required></div></div>
+        <div class="field"><label>Гостей</label><div class="guests">
+          <label><input type="radio" name="guests" value="1" data-label="Гостей"><span>1</span></label><label><input type="radio" name="guests" value="2" data-label="Гостей" checked><span>2</span></label><label><input type="radio" name="guests" value="3" data-label="Гостей"><span>3</span></label><label><input type="radio" name="guests" value="4" data-label="Гостей"><span>4</span></label><label><input type="radio" name="guests" value="5-6" data-label="Гостей"><span>5–6</span></label><label><input type="radio" name="guests" value="7+" data-label="Гостей"><span>7+</span></label>
+        </div></div>
+        <div class="row2"><div class="field"><label>Имя</label><input class="input" name="name" data-label="Имя" required></div><div class="field"><label>Телефон</label><input class="input" type="tel" name="phone" data-label="Телефон" required></div></div>
+        <div class="field"><label>Пожелания</label><input class="input" name="comment" data-label="Пожелания" placeholder="У окна, день рождения, детский стул…"></div>
+        <label class="consent"><input type="checkbox" name="consent" required checked> <span>Согласен(на) с <a href="policy.html" target="_blank">политикой обработки персональных данных</a></span></label>
+        <button class="btn btn--primary btn--block" type="submit">Забронировать</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacts">
+  <div class="container grid g2" style="gap:40px;align-items:stretch">
+    <div data-reveal="left">
+      <span class="eyebrow">Контакты</span><h2 class="h2">Заходите <em>на кофе</em></h2>
+      <div style="display:grid;gap:22px;margin-top:30px;font-size:18px">
+        <div><div class="muted" style="font-size:13px;text-transform:uppercase;letter-spacing:.1em">Адрес</div><div data-cfg="address"></div></div>
+        <div><div class="muted" style="font-size:13px;text-transform:uppercase;letter-spacing:.1em">Телефон</div><a data-cfg="phone"></a></div>
+        <div><div class="muted" style="font-size:13px;text-transform:uppercase;letter-spacing:.1em">Часы работы</div><div data-cfg="hoursText"></div><span class="open-status" data-open-status style="margin-top:6px"></span></div>
+      </div>
+    </div>
+    <div class="map" data-map data-reveal="right"></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div><a href="#" class="logo"><i>З</i>Зерно</a><p class="muted" style="margin-top:14px;max-width:300px">Кофейня и кухня в самом сердце Петербурга.</p></div>
+      <div><h4>Гостям</h4><ul><li><a href="#menu">Меню</a></li><li><a href="#booking">Бронь</a></li><li><a href="#loyalty">Бонусы</a></li></ul></div>
+      <div><h4>Соцсети</h4><ul><li><a data-cfg-href="telegram">Telegram</a></li><li><a data-cfg-href="vk">ВКонтакте</a></li><li><a data-cfg-href="whatsapp">WhatsApp</a></li></ul></div>
+      <div><h4>Контакты</h4><ul><li><a data-cfg="phone"></a></li><li><a data-cfg="email"></a></li><li data-cfg="address"></li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© <span data-year></span> <span data-cfg="legalOwner"></span> · ИНН <span data-cfg="inn"></span></span><a href="policy.html">Политика конфиденциальности</a></div>
+  </div>
+</footer>
+
+<!-- Корзина -->
+<button class="cart-btn" id="cartBtn">🛍 Ваш заказ <b id="cartCount">0</b><span id="cartSum">0 ₽</span></button>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Корзина">
+  <div class="drawer__head"><h3 style="font-size:26px">Ваш заказ</h3><button class="modal__close" style="position:static" id="drawerClose" aria-label="Закрыть">×</button></div>
+  <div class="drawer__body" id="cartList"></div>
+  <div class="drawer__foot">
+    <div class="tot"><span>Сумма</span><span id="cSub">0 ₽</span></div>
+    <div class="tot" id="cDelRow"><span>Доставка</span><span id="cDel">—</span></div>
+    <div class="tot big"><span>Итого</span><span id="cTot">0 ₽</span></div>
+    <form class="form" data-lead="Заказ" id="orderForm" data-success="Заказ принят! Пришлём подтверждение в течение 5 минут.">
+      <div class="seg" style="display:flex;gap:6px"><label style="flex:1"><input type="radio" name="type" value="Самовывоз" data-label="Получение" checked hidden><span class="btn btn--ghost btn--block" style="padding:10px">Самовывоз</span></label><label style="flex:1"><input type="radio" name="type" value="Доставка" data-label="Получение" hidden><span class="btn btn--ghost btn--block" style="padding:10px">Доставка</span></label></div>
+      <input class="input" name="name" data-label="Имя" placeholder="Имя" required>
+      <input class="input" type="tel" name="phone" data-label="Телефон" placeholder="Телефон" required>
+      <input class="input" name="address" data-label="Адрес" placeholder="Адрес доставки" id="addr" style="display:none">
+      <input type="hidden" name="order" data-label="Состав заказа" id="orderField">
+      <label class="consent"><input type="checkbox" name="consent" required checked> <span>Согласен(на) с <a href="policy.html" target="_blank">политикой ПД</a></span></label>
+      <button class="btn btn--primary btn--block" type="submit">Оформить заказ</button>
+    </form>
+  </div>
+</aside>
+
+<script src="js/core.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
